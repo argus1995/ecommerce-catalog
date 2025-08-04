@@ -123,10 +123,29 @@ body {
 button {
   width: 100%;
   padding: 8px 16px;
-  border: 1px solid black;
+  border: none;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
   background: var(--bg-main);
-  color: black;
+  color: white;
+}
+
+.product-card-unavailable {
+  background: center no-repeat url("/public/sad-face.png");
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: min(80%, 1034px);
+  height: 580px;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-card-unavailable button {
+  width: 50%;
 }
