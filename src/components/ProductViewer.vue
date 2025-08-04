@@ -3,6 +3,7 @@
     :style="{ background: currentStyle.background }"
     class="product-container"
   >
+    <Spinner v-if="isLoading" />
     <div v-if="currentStyle.show" class="product-card">
       <div class="img-container">
         <img :src="currentProduct.image" alt="Product Image" />
@@ -78,9 +79,11 @@
 import { ref, computed } from "vue";
 import { onMounted } from "vue";
 import Button from "../components/Button.vue";
+import Spinner from "./Spinner.vue";
 
 const products = ref([]);
 const currentIndex = ref(0);
+const isLoading = ref(true);
 
 const currentProduct = computed(() => products.value[currentIndex.value] || {});
 
@@ -120,8 +123,16 @@ function nextProduct() {
 }
 
 onMounted(async () => {
-  const res = await fetch("https://fakestoreapi.com/products/");
-  products.value = await res.json();
+  isLoading.value = true;
+  try {
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+    products.value = data;
+  } catch (e) {
+    console.error("Failed to load products", e);
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>
 
