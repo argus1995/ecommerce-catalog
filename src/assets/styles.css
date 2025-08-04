@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --color-men: #002772;
+  --color-women: #720060;
+  --bg-men: #d6e6ff;
+  --bg-women: #fde2ff;
+  --bg-main: #ffffff;
+  --bg-grey: #dcdcdc;
+  --text-dark: #1e1e1e;
+  --text-grey: #3f3f3f;
+  --border-color: #dcdcdc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter";
+  background-color: var(--bg-main);
+}
+
+.product-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  background: var(--bg-main);
+  padding: 56px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: min(80%, 1034px);
+  height: 580px;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.img-container {
+  display: flex;
+  width: 305px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container img {
+  width: 100%;
+  max-height: 383px;
+  object-fit: contain;
+}
+
+.desc-container {
+  width: 584px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-container h3 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.category-rating {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.category {
+  font-size: 18px;
+}
+
+.rating-container {
+  display: flex;
+}
+
+.rating {
+  font-size: 18px;
+}
+
+.rating-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 1px;
+}
+
+.rating-circle-border {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 1px;
+}
+
+.description {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-dark);
+  height: 251.5px;
+  flex-grow: 1;
+}
+
+.price {
+  margin: 15px 0 15px 0;
+}
+
+.button-container {
+  display: flex;
+  gap: 19px;
+}
+
+button {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid black;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  background: var(--bg-main);
+  color: black;
+}
